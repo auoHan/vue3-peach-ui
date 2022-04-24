@@ -1,8 +1,5 @@
 <template>
-  <div class="top-nav">
-    <div class="logo"></div>
-    <div class="menu"></div>
-  </div>
+  <TopNav/>
   <div class="content">
     <aside>边栏</aside>
     <main>主内容</main>
@@ -11,6 +8,7 @@
 
 <script setup lang='ts'>
 
+import TopNav from '@/components/TopNav/TopNav.vue'
 </script>
 
 <style lang="scss" scoped>
