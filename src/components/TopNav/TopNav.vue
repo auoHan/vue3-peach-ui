@@ -3,7 +3,7 @@
     <span class="logo" @click.prevent="toggleLogo">
       <SvgIcon name="水蜜桃" class="icon-logo"/>
     </span>
-    <span @click.prevent="toggleAside">
+    <span class="toggleAside" @click.prevent="toggleAside">
       <SvgIcon name="menu" color="#ec9bad" class="icon-menu"/>
     </span>
     <ul class="menu">
@@ -34,23 +34,26 @@ const toggleLogo = () => {
   display: flex;
   padding: 16px;
   position: relative;
+  justify-content: center;
+  align-items: center;
   z-index: 20;
 
   > .logo {
     max-width: 6em;
     margin-right: auto;
-  }
-
-  > span {
-    > .icon-menu {
-      width: 32px;
-      height: 32px;
-    }
-
     > .icon-logo {
       width: 32px;
       height: 32px;
     }
+  }
+
+  > .toggleAside {
+    > .icon-menu {
+      width: 32px;
+      height: 32px;
+      vertical-align: middle;
+    }
+
   }
 
   > .menu {
@@ -61,6 +64,11 @@ const toggleLogo = () => {
     > li {
       margin: 0 1em;
     }
+  }
+
+  @media (max-width: 500px) {
+    > .menu{display: none;}
+    > .logo{margin: 0 auto;}
   }
 }
 </style>
