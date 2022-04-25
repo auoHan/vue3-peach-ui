@@ -1,6 +1,6 @@
 <template>
   <div>
-    SwitchDemo
+    TabsDemo
   </div>
 </template>
 

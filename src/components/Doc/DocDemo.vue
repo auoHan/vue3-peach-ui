@@ -1,7 +1,5 @@
 <template>
-  <div>
-    SwitchDemo
-  </div>
+  <div>DocDemo</div>
 </template>
 
 <script lang='ts' setup>
