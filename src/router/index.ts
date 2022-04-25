@@ -13,27 +13,27 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '',
-        component: () => import('@/components/Doc/DocDemo.vue')
+        component: () => import('@/components/DocDemo/DocDemo.vue')
       },
       {
         path: 'switch',
         name: 'switch',
-        component: () => import('@/components/Switch/SwitchDemo.vue')
+        component: () => import('@/components/SwitchDemo/SwitchDemo.vue')
       },
       {
         path: 'button',
         name: 'button',
-        component: () => import('@/components/Button/ButtonDemo.vue')
+        component: () => import('@/components/ButtonDemo/ButtonDemo.vue')
       },
       {
         path: 'dialog',
         name: 'dialog',
-        component: () => import('@/components/Dialog/DialogDemo.vue')
+        component: () => import('@/components/DialogDemo/DialogDemo.vue')
       },
       {
         path: 'tabs',
         name: 'tabs',
-        component: () => import('@/components/Tabs/TabsDemo.vue')
+        component: () => import('@/components/TabsDemo/TabsDemo.vue')
       }
     ]
   }
