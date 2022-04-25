@@ -1,4 +1,4 @@
-import {createRouter,createWebHashHistory,RouteRecordRaw} from 'vue-router'
+import {createRouter, createWebHashHistory, RouteRecordRaw} from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -9,7 +9,14 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/doc',
     name: 'doc',
-    component: () => import('@/views/doc/index.vue')
+    component: () => import('@/views/doc/index.vue'),
+    children: [
+      {
+        path: 'switch',
+        name: 'switch',
+        component: () => import('@/components/Switch/SwitchDemo.vue')
+      }
+    ]
   }
 ]
 
