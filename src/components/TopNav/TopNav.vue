@@ -53,6 +53,7 @@ const toggleLogo = () => {
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
+    display: none;
 
     > .icon-menu {
       width: 28px;
@@ -78,6 +79,9 @@ const toggleLogo = () => {
     }
     > .logo {
       margin: 0 auto;
+    }
+    > .toggleAside {
+      display: inline-block;
     }
   }
 }
