@@ -1,5 +1,5 @@
 <template>
-  <div class="top-nav">
+  <div ref="topNavRef" class="top-nav">
     <span class="logo" @click.prevent="toggleLogo">
       <SvgIcon name="水蜜桃" class="icon-logo"/>
     </span>
@@ -17,15 +17,23 @@
 
 import {Ref} from 'vue'
 import SvgIcon from '@/components/SvgIcon/SvgIcon.vue'
+import {useClickOutside} from '@/hooks/useClickOutside'
 
 const router = useRouter()
 const asideVisible = inject<Ref<boolean>>('asideVisible', ref(true))
+const topNavRef = ref<null | HTMLElement>(null)
+const isClickOutAside = useClickOutside(topNavRef)
 const toggleAside = () => {
   asideVisible.value = !asideVisible.value
 }
 const toggleLogo = () => {
   router.push('/')
 }
+watch(isClickOutAside, () => {
+  if (asideVisible.value && isClickOutAside.value) {
+    asideVisible.value = false
+  }
+})
 </script>
 
 <style lang="scss" scoped>
