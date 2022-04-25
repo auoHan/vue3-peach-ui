@@ -1,12 +1,10 @@
 <template>
-  <div>
-    SwitchDemo
-  </div>
+  <Switch/>
 </template>
 
 <script lang='ts' setup>
 
-</script>
+import Switch from '@/lib/Switch/Switch.vue'</script>
 
 <style lang="scss" scoped>
 
