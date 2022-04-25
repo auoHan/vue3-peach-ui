@@ -30,9 +30,9 @@ const toggleLogo = () => {
 
 <style lang="scss" scoped>
 .top-nav {
-  background: pink;
+  background: skyblue;
   display: flex;
-  padding: 16px;
+  padding: 12px;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -41,16 +41,22 @@ const toggleLogo = () => {
   > .logo {
     max-width: 6em;
     margin-right: auto;
+
     > .icon-logo {
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
     }
   }
 
   > .toggleAside {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+
     > .icon-menu {
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
       vertical-align: middle;
     }
 
@@ -67,8 +73,12 @@ const toggleLogo = () => {
   }
 
   @media (max-width: 500px) {
-    > .menu{display: none;}
-    > .logo{margin: 0 auto;}
+    > .menu {
+      display: none;
+    }
+    > .logo {
+      margin: 0 auto;
+    }
   }
 }
 </style>
