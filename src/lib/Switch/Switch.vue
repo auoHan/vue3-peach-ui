@@ -3,11 +3,14 @@
 </template>
 
 <script lang='ts' setup>
-import Button from '@/lib/Button/Button.vue'
 
-const checked = ref(false)
+const props = defineProps<{ checked: boolean }>()
+const emit = defineEmits<{
+  (e: 'update:checked', checked: boolean): void
+}>()
+
 const toggle = () => {
-  checked.value = !checked.value
+  emit('update:checked', !props.checked)
 }
 </script>
 
