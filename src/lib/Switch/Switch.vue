@@ -31,6 +31,7 @@ span {
   width: $h2;
   background: white;
   border-radius: calc(#{$h2} / 2);
+  transition: left .4s;
 }
 
 button.checked {
