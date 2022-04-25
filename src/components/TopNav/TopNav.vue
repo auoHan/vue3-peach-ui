@@ -41,7 +41,6 @@ watch(isClickOutAside, () => {
   background: skyblue;
   display: flex;
   padding: 12px;
-  position: relative;
   justify-content: center;
   align-items: center;
   z-index: 20;
