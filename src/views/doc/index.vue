@@ -49,5 +49,13 @@ aside {
       padding: 4px 0;
     }
   }
+
+  @media (max-width: 500px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    padding: 70px 16px 16px;
+  }
 }
 </style>

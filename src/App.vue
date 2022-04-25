@@ -3,7 +3,8 @@
 </template>
 
 <script setup lang="ts">
-const asideVisible = ref(true)
+const width = document.documentElement.clientWidth
+const asideVisible = ref(width > 500)
 provide('asideVisible', asideVisible)
 </script>
 
