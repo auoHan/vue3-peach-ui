@@ -1,6 +1,11 @@
 <template>
   <div class="top-nav">
-    <div class="logo" @click.prevent="toggleMenu">LOGO</div>
+    <span class="logo" @click.prevent="toggleLogo">
+      <SvgIcon name="水蜜桃" class="svg-icon"/>
+    </span>
+    <span @click.prevent="toggleMenu" class="menu-icon">
+      <SvgIcon name="menu" color="#ec9bad" class="svg-icon"/>
+    </span>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
@@ -11,10 +16,15 @@
 <script setup lang='ts'>
 
 import {Ref} from 'vue'
+import SvgIcon from '@/components/SvgIcon/SvgIcon.vue'
 
+const router = useRouter()
 const asideVisible = inject<Ref<boolean>>('asideVisible', ref(true))
 const toggleMenu = () => {
   asideVisible.value = !asideVisible.value
+}
+const toggleLogo = () => {
+  router.push('/')
 }
 </script>
 
@@ -29,6 +39,16 @@ const toggleMenu = () => {
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    > .svg-icon {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  > .menu-icon {
+    > .svg-icon{
+      width: 32px;
+      height: 32px;
+    }
   }
 
   > .menu {
