@@ -12,8 +12,7 @@
 
 <script setup lang='ts'>
 
-import TopNav from '@/components/TopNav/TopNav.vue'
-</script>
+import TopNav from '@/components/TopNav/TopNav.vue'</script>
 
 <style lang="scss" scoped>
 .banner {
@@ -33,7 +32,7 @@ import TopNav from '@/components/TopNav/TopNav.vue'
       display: inline-block;
       height: $home-h;
       line-height: $home-h;
-      border-radius: calc($home-h / 2);
+      border-radius: calc(#{$home-h} / 2);
       padding: 0 8px;
     }
   }

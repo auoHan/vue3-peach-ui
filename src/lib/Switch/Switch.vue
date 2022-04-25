@@ -14,7 +14,7 @@ button {
   width: $h*2;
   border: none;
   background: $theme-color;
-  border-radius: calc($h / 2);
+  border-radius: calc(#{$h} / 2);
   position: relative;
 }
 
@@ -25,6 +25,6 @@ span {
   height: $h2;
   width: $h2;
   background: white;
-  border-radius: calc($h / 2);
+  border-radius: calc(#{$h} / 2);
 }
 </style>
