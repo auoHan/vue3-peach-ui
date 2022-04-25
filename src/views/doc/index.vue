@@ -1,7 +1,7 @@
 <template>
   <TopNav/>
   <div class="content">
-    <aside>
+    <aside v-if="asideVisible">
       <h2>组件列表</h2>
       <ol>
         <li>
@@ -25,6 +25,9 @@
 <script setup lang='ts'>
 
 import TopNav from '@/components/TopNav/TopNav.vue'
+import {Ref} from 'vue'
+
+const asideVisible = inject<Ref<boolean>>('asideVisible', ref(true))
 </script>
 
 <style lang="scss" scoped>
@@ -40,6 +43,7 @@ aside {
   > h2 {
     margin-bottom: 4px;
   }
+
   > ol {
     > li {
       padding: 4px 0;
