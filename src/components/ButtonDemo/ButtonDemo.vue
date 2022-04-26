@@ -25,7 +25,7 @@
       <Button size="small" theme="text">小小小</Button>
     </div>
   </div>
-  <h1>示例3</h1>
+  <h2>示例3</h2>
   <div>
     <div>
       <Button level="main">主要按钮</Button>
