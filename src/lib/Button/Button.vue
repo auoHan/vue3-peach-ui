@@ -47,5 +47,25 @@ $radius: 4px;
   &::-moz-focus-inner {
     border: 0;
   }
+
+  &.peach-theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $theme-color;
+
+    &:hover, &:focus {
+      color: lighten($theme-color, 10%);
+    }
+  }
+
+  &.peach-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+
+    &:hover, &:focus {
+      background: darken(white, 5%);;
+    }
+  }
 }
 </style>
