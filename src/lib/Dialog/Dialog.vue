@@ -3,10 +3,12 @@
     <div class="peach-dialog-overlay" @click="onCloseClickOverlay"></div>
     <div class="peach-dialog-wrapper">
       <div class="peach-dialog">
-        <header>标题 <span class="peach-dialog-close" @click="close"></span></header>
+        <header>
+          {{ props.title }}
+          <span class="peach-dialog-close" @click="close"></span>
+        </header>
         <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
+          <slot/>
         </main>
         <footer>
           <Button level="main" @click="ok">OK</Button>
@@ -24,12 +26,14 @@ import Button from '@/lib/Button/Button.vue'
 interface Props {
   visible: boolean
   closeClickOverlay?: boolean
+  title?: string
   ok: Function
   cancel: Function
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  closeClickOverlay: false
+  closeClickOverlay: false,
+  title: '标题'
 })
 const emit = defineEmits<{
   (e: 'update:visible', visible: boolean): void

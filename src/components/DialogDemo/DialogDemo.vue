@@ -2,7 +2,10 @@
   <p>Dialog 示例</p>
   <h2>示例1</h2>
   <Button @click="onVisible">toggle</Button>
-  <Dialog v-model:visible="visible" :cancel="cancel" :ok="ok"/>
+  <Dialog v-model:visible="visible" :cancel="cancel" :ok="ok">
+    <p>hi!</p>
+    <p>hello!</p>
+  </Dialog>
 </template>
 
 <script lang='ts' setup>
