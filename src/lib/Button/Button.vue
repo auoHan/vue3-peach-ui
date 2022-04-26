@@ -1,5 +1,5 @@
 <template>
-  <button :class="`theme-${theme}`" class="peach-button">
+  <button :class="`peach-theme-${theme}`" class="peach-button">
     <slot/>
   </button>
 </template>

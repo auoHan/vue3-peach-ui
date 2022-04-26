@@ -1,5 +1,5 @@
 <template>
-  <button :class="{checked}" @click="toggle"><span></span></button>
+  <button :class="{'peach-checked':checked}" class="peach-switch" @click="toggle"><span></span></button>
 </template>
 
 <script lang='ts' setup>
@@ -17,7 +17,7 @@ const toggle = () => {
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.peach-switch {
   height: $h;
   width: $h*2;
   border: none;
@@ -36,7 +36,7 @@ button {
     transition: left .4s;
   }
 
-  &.checked {
+  &.peach-checked {
     background: $theme-color;
 
     > span {
