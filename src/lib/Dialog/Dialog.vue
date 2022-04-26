@@ -1,23 +1,62 @@
 <template>
-  <div class="peach-dialog-overlay"></div>
-  <div class="peach-dialog-wrapper">
-    <div class="peach-dialog">
-      <header>标题 <span class="peach-dialog-close"></span></header>
-      <main>
-        <p>第一行字</p>
-        <p>第二行字</p>
-      </main>
-      <footer>
-        <Button level="main">OK</Button>
-        <Button>Cancel</Button>
-      </footer>
+  <template v-if="props.visible">
+    <div class="peach-dialog-overlay" @click="onCloseClickOverlay"></div>
+    <div class="peach-dialog-wrapper">
+      <div class="peach-dialog">
+        <header>标题 <span class="peach-dialog-close" @click="close"></span></header>
+        <main>
+          <p>第一行字</p>
+          <p>第二行字</p>
+        </main>
+        <footer>
+          <Button level="main" @click="ok">OK</Button>
+          <Button @click="cancel">Cancel</Button>
+        </footer>
+      </div>
     </div>
-  </div>
+  </template>
 </template>
 
 <script lang='ts' setup>
 
-import Button from '@/lib/Button/Button.vue'</script>
+import Button from '@/lib/Button/Button.vue'
+
+interface Props {
+  visible: boolean
+  closeClickOverlay?: boolean
+  ok: Function
+  cancel: Function
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  closeClickOverlay: false
+})
+const emit = defineEmits<{
+  (e: 'update:visible', visible: boolean): void
+}>()
+
+const close = () => {
+  emit('update:visible', false)
+}
+
+const onCloseClickOverlay = () => {
+  if (props.closeClickOverlay) {
+    emit('update:visible', false)
+  }
+}
+
+const ok = () => {
+  if (props.ok?.() !== false) {
+    close()
+  }
+}
+
+const cancel = () => {
+  if (props.cancel?.() !== false) {
+    close()
+  }
+}
+</script>
 
 <style lang="scss">
 $radius: 4px;
