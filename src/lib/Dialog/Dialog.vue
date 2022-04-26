@@ -1,21 +1,23 @@
 <template>
   <template v-if="props.visible">
-    <div class="peach-dialog-overlay" @click="onCloseClickOverlay"></div>
-    <div class="peach-dialog-wrapper">
-      <div class="peach-dialog">
-        <header>
-          <slot name="title"/>
-          <span class="peach-dialog-close" @click="close"></span>
-        </header>
-        <main>
-          <slot/>
-        </main>
-        <footer>
-          <Button level="main" @click="ok">OK</Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="peach-dialog-overlay" @click="onCloseClickOverlay"></div>
+      <div class="peach-dialog-wrapper">
+        <div class="peach-dialog">
+          <header>
+            <slot name="title"/>
+            <span class="peach-dialog-close" @click="close"></span>
+          </header>
+          <main>
+            <slot/>
+          </main>
+          <footer>
+            <Button level="main" @click="ok">OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 
