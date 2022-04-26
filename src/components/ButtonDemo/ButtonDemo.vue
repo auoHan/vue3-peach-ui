@@ -2,7 +2,7 @@
   <p>button示例</p>
   <h2>示例1</h2>
   <div>
-    <Button>你好</Button>
+    <Button @click="onClick">你好</Button>
     <Button theme="button">你好</Button>
     <Button theme="link">你好</Button>
     <Button theme="text">你好</Button>
@@ -58,7 +58,12 @@
 
 <script lang='ts' setup>
 
-import Button from '@/lib/Button/Button.vue'</script>
+import Button from '@/lib/Button/Button.vue'
+
+const onClick = () => {
+  console.log('onClick~~~')
+}
+</script>
 
 <style lang="scss" scoped>
 
