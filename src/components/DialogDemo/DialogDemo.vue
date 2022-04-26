@@ -3,6 +3,9 @@
   <h2>示例1</h2>
   <Button @click="onVisible">toggle</Button>
   <Dialog v-model:visible="visible" :cancel="cancel" :ok="ok">
+    <template #title>
+      <strong>标题</strong>
+    </template>
     <p>hi!</p>
     <p>hello!</p>
   </Dialog>

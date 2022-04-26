@@ -4,7 +4,7 @@
     <div class="peach-dialog-wrapper">
       <div class="peach-dialog">
         <header>
-          {{ props.title }}
+          <slot name="title"/>
           <span class="peach-dialog-close" @click="close"></span>
         </header>
         <main>
@@ -26,14 +26,12 @@ import Button from '@/lib/Button/Button.vue'
 interface Props {
   visible: boolean
   closeClickOverlay?: boolean
-  title?: string
   ok: Function
   cancel: Function
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  closeClickOverlay: false,
-  title: '标题'
+  closeClickOverlay: false
 })
 const emit = defineEmits<{
   (e: 'update:visible', visible: boolean): void
