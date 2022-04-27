@@ -3,7 +3,7 @@
     <div ref="navRef" class="peach-tabs-nav">
       <div v-for="(t,index) in titles" :key="index" :class="{'selected' : props.selected === t}"
            class="peach-tabs-nav-item"
-           ref="titleRefs"
+           :ref="el => {if(t === props.selected) selectedItem = el}"
            @click="select(t)">{{ t }}
       </div>
       <div ref="indicatorRef" class="peach-tabs-nav-indicator"></div>
@@ -42,15 +42,12 @@ const select = (title: string) => {
 const current = computed(() => {
   return defaults?.find(tag => tag.props?.title === props.selected)
 })
-const titleRefs = ref<HTMLDivElement[]>([])
+const selectedItem = ref<null | HTMLDivElement>(null)
 const indicatorRef = ref<null | HTMLDivElement>(null)
 const navRef = ref<null | HTMLDivElement>(null)
-// 解决watchEffect在onMounted之前就执行的问题
 onMounted(() => {
   watchEffect(() => {
-    const divs = titleRefs.value
-    const result = divs.find(div => div.classList.contains('selected'))
-    const {width, left: left1} = result?.getBoundingClientRect() as DOMRect
+    const {width, left: left1} = selectedItem.value?.getBoundingClientRect() as DOMRect
     const {left: left2} = navRef.value?.getBoundingClientRect() as DOMRect
     const left = left1 - left2
     ;(indicatorRef.value as HTMLDivElement).style.width = width + 'px'
