@@ -3,7 +3,7 @@
     <span class="logo" @click.prevent="toggleLogo">
       <SvgIcon class="icon" name="水蜜桃"/>
     </span>
-    <span class="toggleAside" @click.prevent="toggleAside">
+    <span v-if="toggleMenuButtonVisible" class="toggleAside" @click.prevent="toggleAside">
       <SvgIcon class="icon" color="#ec9bad" name="menu"/>
     </span>
     <ul class="menu">
@@ -22,6 +22,7 @@ import {useClickOutside} from '@/hooks/useClickOutside'
 
 const router = useRouter()
 const asideVisible = inject<Ref<boolean>>('asideVisible', ref(true))
+const {toggleMenuButtonVisible} = withDefaults(defineProps<{ toggleMenuButtonVisible: boolean }>(), {toggleMenuButtonVisible: false})
 const topNavRef = ref<null | HTMLElement>(null)
 const isClickOutAside = useClickOutside(topNavRef)
 const toggleAside = () => {
