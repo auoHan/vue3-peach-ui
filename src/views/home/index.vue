@@ -12,9 +12,23 @@
       </div>
     </div>
     <div class="features">
-      <SvgIcon class="icon" name="vue"/>
-      <SvgIcon class="icon" name="ts"/>
-      <SvgIcon class="icon" name="灯泡"/>
+      <ul>
+        <li>
+          <SvgIcon class="icon" name="vue"/>
+          <h3>基于 Vue 3</h3>
+          <p>使用了 Vue 3 Composition API</p>
+        </li>
+        <li>
+          <SvgIcon class="icon" name="ts"/>
+          <h3>基于 TypeScript </h3>
+          <p>源代码采用 TypeScript 书写（非严格检查）</p>
+        </li>
+        <li>
+          <SvgIcon class="icon" name="灯泡"/>
+          <h3>代码易读</h3>
+          <p>每个组件的源代码都极其简洁</p>
+        </li>
+      </ul>
     </div>
   </div>
 
@@ -35,9 +49,48 @@ $color: #fd5454;
 }
 
 .features {
-  > .icon {
-    width: 64px;
-    height: 64px;
+  margin: 64px auto;
+  width: 400px;
+
+  @media (min-width: 800px) {
+    width: 800px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
+
+  > ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+      width: 400px;
+      margin: 16px 0;
+      display: grid;
+      justify-content: start;
+      align-content: space-between;
+      grid-template-areas:
+        "icon title"
+        "icon text";
+      grid-template-columns: 80px auto;
+      grid-template-rows: 1fr auto;
+
+      > .icon {
+        grid-area: icon;
+        width: 64px;
+        height: 64px;
+      }
+
+      > h3 {
+        grid-area: title;
+        font-size: 28px;
+      }
+
+      > p {
+        grid-area: text
+      }
+    }
   }
 }
 

@@ -7,8 +7,9 @@
       <SvgIcon class="icon" color="#ec9bad" name="menu"/>
     </span>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li>
+        <router-link to="/doc">文档</router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -37,9 +38,8 @@ watch(isClickOutAside, () => {
 </script>
 
 <style lang="scss" scoped>
-$color: #fd5454;
 .top-nav {
-  color: $color;
+  color: white;
   display: flex;
   padding: 12px;
   justify-content: center;
