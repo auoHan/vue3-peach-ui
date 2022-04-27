@@ -5,6 +5,7 @@
            class="peach-tabs-nav-item"
            @click="select(t)">{{ t }}
       </div>
+      <div class="peach-tabs-nav-indicator"></div>
     </div>
     <div class="peach-tabs-content">
       <component :is="current" :key="current.props.title"
@@ -50,6 +51,7 @@ $border-color: #d9d9d9;
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
+    position: relative;
 
     &-item {
       padding: 8px 0;
@@ -63,6 +65,15 @@ $border-color: #d9d9d9;
       &.selected {
         color: $theme-color;
       }
+    }
+
+    &-indicator {
+      position: absolute;
+      height: 3px;
+      background: $theme-color;
+      left: 0;
+      bottom: -1px;
+      width: 100px;
     }
   }
 
