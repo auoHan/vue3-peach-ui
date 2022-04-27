@@ -38,7 +38,6 @@ watch(isClickOutAside, () => {
 
 <style lang="scss" scoped>
 .top-nav {
-  background: skyblue;
   display: flex;
   padding: 12px;
   justify-content: center;

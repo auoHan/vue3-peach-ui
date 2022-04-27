@@ -1,12 +1,14 @@
 <template>
-  <TopNav/>
-  <div class="banner">
-    <h1>水蜜桃UI</h1>
-    <h2>一个简洁的 UI 框架</h2>
-    <p class="actions">
-      <a href="https://github.com/auoHan/vue3-peach-ui">GitHub</a>
-      <router-link to="/doc">开始</router-link>
-    </p>
+  <div class="topNavAndBanner">
+    <TopNav/>
+    <div class="banner">
+      <h1>水蜜桃UI</h1>
+      <h2>一个简洁的 UI 框架</h2>
+      <p class="actions">
+        <a href="https://github.com/auoHan/vue3-peach-ui">GitHub</a>
+        <router-link to="/doc">开始</router-link>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -15,13 +17,16 @@
 import TopNav from '@/components/TopNav/TopNav.vue'</script>
 
 <style lang="scss" scoped>
+.topNavAndBanner {
+  background: linear-gradient(145deg, rgba(251, 217, 217, 1) 0%, rgba(237, 157, 178, 1) 100%);
+}
+
 .banner {
   padding: 100px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: lightgreen;
 
   > .actions {
     padding: 8px 0;
