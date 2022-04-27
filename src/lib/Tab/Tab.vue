@@ -1,10 +1,10 @@
 <template>
-  <Tabs/>
+  <slot/>
 </template>
 
 <script lang='ts' setup>
 
-import Tabs from '@/lib/Tabs/Tabs.vue'</script>
+</script>
 
 <style lang="scss" scoped>
 
