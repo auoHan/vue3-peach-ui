@@ -45,20 +45,17 @@ const current = computed(() => {
 const titleRefs = ref<HTMLDivElement[]>([])
 const indicatorRef = ref<null | HTMLDivElement>(null)
 const navRef = ref<null | HTMLDivElement>(null)
-const x = () => {
-  const divs = titleRefs.value
-  const result = divs.find(div => div.classList.contains('selected'))
-  const {width, left: left1} = result?.getBoundingClientRect() as DOMRect
-  const {left: left2} = navRef.value?.getBoundingClientRect() as DOMRect
-  const left = left1 - left2
-  ;(indicatorRef.value as HTMLDivElement).style.width = width + 'px'
-  ;(indicatorRef.value as HTMLDivElement).style.left = left + 'px'
-}
+// 解决watchEffect在onMounted之前就执行的问题
 onMounted(() => {
-  x()
-})
-onUpdated(() => {
-  x()
+  watchEffect(() => {
+    const divs = titleRefs.value
+    const result = divs.find(div => div.classList.contains('selected'))
+    const {width, left: left1} = result?.getBoundingClientRect() as DOMRect
+    const {left: left2} = navRef.value?.getBoundingClientRect() as DOMRect
+    const left = left1 - left2
+    ;(indicatorRef.value as HTMLDivElement).style.width = width + 'px'
+    ;(indicatorRef.value as HTMLDivElement).style.left = left + 'px'
+  })
 })
 </script>
 
