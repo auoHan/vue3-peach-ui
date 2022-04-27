@@ -1,11 +1,12 @@
 <template>
   <div class="peach-tabs">
-    <div class="peach-tabs-nav">
+    <div ref="navRef" class="peach-tabs-nav">
       <div v-for="(t,index) in titles" :key="index" :class="{'selected' : props.selected === t}"
            class="peach-tabs-nav-item"
+           ref="titleRefs"
            @click="select(t)">{{ t }}
       </div>
-      <div class="peach-tabs-nav-indicator"></div>
+      <div ref="indicatorRef" class="peach-tabs-nav-indicator"></div>
     </div>
     <div class="peach-tabs-content">
       <component :is="current" :key="current.props.title"
@@ -40,6 +41,24 @@ const select = (title: string) => {
 }
 const current = computed(() => {
   return defaults?.find(tag => tag.props?.title === props.selected)
+})
+const titleRefs = ref<HTMLDivElement[]>([])
+const indicatorRef = ref<null | HTMLDivElement>(null)
+const navRef = ref<null | HTMLDivElement>(null)
+const x = () => {
+  const divs = titleRefs.value
+  const result = divs.find(div => div.classList.contains('selected'))
+  const {width, left: left1} = result?.getBoundingClientRect() as DOMRect
+  const {left: left2} = navRef.value?.getBoundingClientRect() as DOMRect
+  const left = left1 - left2
+  ;(indicatorRef.value as HTMLDivElement).style.width = width + 'px'
+  ;(indicatorRef.value as HTMLDivElement).style.left = left + 'px'
+}
+onMounted(() => {
+  x()
+})
+onUpdated(() => {
+  x()
 })
 </script>
 
