@@ -1,10 +1,10 @@
 <template>
   <div ref="topNavRef" class="top-nav">
     <span class="logo" @click.prevent="toggleLogo">
-      <SvgIcon name="水蜜桃" class="icon-logo"/>
+      <SvgIcon class="icon" name="水蜜桃"/>
     </span>
     <span class="toggleAside" @click.prevent="toggleAside">
-      <SvgIcon name="menu" color="#ec9bad" class="icon-menu"/>
+      <SvgIcon class="icon" color="#ec9bad" name="menu"/>
     </span>
     <ul class="menu">
       <li>菜单1</li>
@@ -37,7 +37,9 @@ watch(isClickOutAside, () => {
 </script>
 
 <style lang="scss" scoped>
+$color: #fd5454;
 .top-nav {
+  color: $color;
   display: flex;
   padding: 12px;
   justify-content: center;
@@ -47,11 +49,6 @@ watch(isClickOutAside, () => {
   > .logo {
     max-width: 6em;
     margin-right: auto;
-
-    > .icon-logo {
-      width: 28px;
-      height: 28px;
-    }
   }
 
   > .toggleAside {
@@ -60,13 +57,6 @@ watch(isClickOutAside, () => {
     top: 50%;
     transform: translateY(-50%);
     display: none;
-
-    > .icon-menu {
-      width: 28px;
-      height: 28px;
-      vertical-align: middle;
-    }
-
   }
 
   > .menu {
@@ -89,6 +79,16 @@ watch(isClickOutAside, () => {
     > .toggleAside {
       display: inline-block;
     }
+  }
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+
+  &:hover {
+    cursor: pointer;
   }
 }
 </style>
