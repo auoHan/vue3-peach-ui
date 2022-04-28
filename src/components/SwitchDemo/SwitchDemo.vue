@@ -1,10 +1,10 @@
 <template>
-  <Switch v-model:checked="checked"/>
+  <PSwitch v-model:checked="checked"/>
 </template>
 
 <script lang='ts' setup>
 
-import Switch from '@/lib/Switch/Switch.vue'
+import PSwitch from '@/lib/Switch/PSwitch.vue'
 
 const checked = ref(false)
 </script>

@@ -23,7 +23,7 @@
 
 <script lang='ts' setup>
 
-import Button from '@/lib/Button/Button.vue'
+import Button from '@/lib/Button/PButton.vue'
 
 interface Props {
   visible: boolean

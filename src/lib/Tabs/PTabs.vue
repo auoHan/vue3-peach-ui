@@ -16,7 +16,7 @@
 </template>
 
 <script lang='ts' setup>
-import Tab from '@/lib/Tab/Tab.vue'
+import Tab from '@/lib/Tab/PTab.vue'
 
 interface Props {
   selected?: string

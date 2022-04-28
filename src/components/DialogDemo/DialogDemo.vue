@@ -1,20 +1,20 @@
 <template>
   <p>Dialog 示例</p>
   <h2>示例1</h2>
-  <Button @click="onVisible">toggle</Button>
-  <Dialog v-model:visible="visible" :cancel="cancel" :ok="ok">
+  <PButton @click="onVisible">toggle</PButton>
+  <PDialog v-model:visible="visible" :cancel="cancel" :ok="ok">
     <template #title>
       <strong>标题</strong>
     </template>
     <p>hi!</p>
     <p>hello!</p>
-  </Dialog>
+  </PDialog>
 </template>
 
 <script lang='ts' setup>
 
-import Dialog from '@/lib/Dialog/Dialog.vue'
-import Button from '@/lib/Button/Button.vue'
+import PDialog from '@/lib/Dialog/PDialog.vue'
+import PButton from '@/lib/Button/PButton.vue'
 
 const visible = ref(false)
 const onVisible = () => {
