@@ -1,16 +1,16 @@
 <template>
-  <button :class="{'peach-checked':checked}" class="peach-switch" @click="toggle"><span></span></button>
+  <button :class="{'peach-checked':value}" class="peach-switch" @click="toggle"><span></span></button>
 </template>
 
 <script lang='ts' setup>
 
-const props = defineProps<{ checked: boolean }>()
+const props = defineProps<{ value: boolean }>()
 const emit = defineEmits<{
-  (e: 'update:checked', checked: boolean): void
+  (e: 'update:value', value: boolean): void
 }>()
 
 const toggle = () => {
-  emit('update:checked', !props.checked)
+  emit('update:value', !props.value)
 }
 </script>
 
