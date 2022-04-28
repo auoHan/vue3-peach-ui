@@ -3,11 +3,13 @@ import vue from '@vitejs/plugin-vue'
 import * as path from 'path'
 import viteCompression from 'vite-plugin-compression'
 import AutoImport from 'unplugin-auto-import/vite'
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import {createSvgIconsPlugin} from 'vite-plugin-svg-icons'
+import mdPlugin, {Mode} from 'vite-plugin-markdown'
 
 export default defineConfig({
   plugins: [
     vue(),
+    mdPlugin({mode: [Mode.HTML, Mode.TOC, Mode.VUE]}),
     // gzip压缩 生产环境生成 .gz 文件
     viteCompression({
       verbose: true,
