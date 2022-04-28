@@ -4,7 +4,7 @@
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
-        <PSwitch v-model:value="bool"/>
+        <Switch1Demo/>
       </div>
       <div class="demo-actions">
         <PButton>查看代码</PButton>
@@ -16,7 +16,7 @@
     <div class="demo">
       <h2>支持 disabled </h2>
       <div class="demo-component">
-        <PSwitch v-model:value="bool" disabled/>
+        <Switch2Demo/>
       </div>
       <div class="demo-actions">
         <PButton>查看代码</PButton>
@@ -30,8 +30,9 @@
 
 <script lang='ts' setup>
 
-import PSwitch from '@/lib/Switch/PSwitch.vue'
 import PButton from '@/lib/Button/PButton.vue'
+import Switch1Demo from '@/components/SwitchDemo/Switch1.demo.vue'
+import Switch2Demo from '@/components/SwitchDemo/Switch2.demo.vue'
 
 const bool = ref(false)
 </script>
