@@ -4,6 +4,7 @@ specifiers:
   '@types/node': ^17.0.25
   '@vitejs/plugin-vue': ^2.3.1
   fast-glob: ^3.2.11
+  github-markdown-css: ^5.1.0
   sass: ^1.50.1
   typescript: ^4.5.4
   unplugin-auto-import: ^0.7.1
@@ -16,6 +17,7 @@ specifiers:
 
 dependencies:
   fast-glob: 3.2.11
+  github-markdown-css: 5.1.0
   vue: 3.2.33
   vue-router: 4.0.14_vue@3.2.33
 
@@ -888,22 +890,26 @@ packages:
     optional: true
 
   /function-bind/1.1.1:
-    resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
+    resolution: { integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A== }
     dev: true
 
   /get-value/2.0.6:
-    resolution: {integrity: sha512-Ln0UQDlxH1BapMu3GPtf7CuYNwRZf2gwCuPqbyG6pB8WfmFpzqcy4xtAaAMUhnNqjMKTiCPZG2oMT3YSx8U2NA==}
-    engines: {node: '>=0.10.0'}
+    resolution: { integrity: sha512-Ln0UQDlxH1BapMu3GPtf7CuYNwRZf2gwCuPqbyG6pB8WfmFpzqcy4xtAaAMUhnNqjMKTiCPZG2oMT3YSx8U2NA== }
+    engines: { node: '>=0.10.0' }
     dev: true
 
+  /github-markdown-css/5.1.0:
+    resolution: { integrity: sha512-QLtORwHHtUHhPMHu7i4GKfP6Vx5CWZn+NKQXe+cBhslY1HEt0CTEkP4d/vSROKV0iIJSpl4UtlQ16AD8C6lMug== }
+    dev: false
+
   /glob-parent/5.1.2:
-    resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
-    engines: {node: '>= 6'}
+    resolution: { integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow== }
+    engines: { node: '>= 6' }
     dependencies:
       is-glob: 4.0.3
 
   /graceful-fs/4.2.10:
-    resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
+    resolution: { integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA== }
     dev: true
 
   /has-ansi/2.0.0:
