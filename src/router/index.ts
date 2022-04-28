@@ -1,4 +1,14 @@
+import {h} from 'vue'
 import {createRouter, createWebHashHistory, RouteRecordRaw} from 'vue-router'
+import Markdown from '@/components/Markdown/Markdown.vue'
+// @ts-ignore
+import {html as Intro} from '@/markdown/intro.md'
+// @ts-ignore
+import {html as Install} from '@/markdown/install.md'
+// @ts-ignore
+import {html as GetStarted} from '@/markdown/get-started.md'
+
+const md = (filename: any) => h(Markdown, {content: filename, key: filename})
 
 const routes: RouteRecordRaw[] = [
   {
@@ -15,6 +25,9 @@ const routes: RouteRecordRaw[] = [
         path: '',
         component: () => import('@/components/DocDemo/DocDemo.vue')
       },
+      {path: 'intro', component: md(Intro)},
+      {path: 'install', component: md(Install)},
+      {path: 'get-started', component: md(GetStarted)},
       {
         path: 'switch',
         name: 'switch',
